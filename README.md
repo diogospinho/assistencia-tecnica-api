@@ -200,6 +200,19 @@ Casos cobertos:
 
 Acesse `http://localhost:3000/api/docs` para explorar todos os endpoints com exemplos de request/response via Swagger UI.
 
+## Coleção da API (importável)
+
+A especificação OpenAPI 3.0 completa está versionada em [`docs/openapi.json`](docs/openapi.json). É possível importá-la diretamente em:
+
+- **Postman** — *Import → File → `docs/openapi.json`* (gera a coleção com todos os endpoints).
+- **Insomnia** — *Import → From File → `docs/openapi.json`*.
+- **Swagger Editor** — cole o conteúdo em [editor.swagger.io](https://editor.swagger.io).
+
+> Para regenerar o arquivo após alterar as rotas:
+> ```bash
+> node -e "const fs=require('fs');fs.writeFileSync('docs/openapi.json',JSON.stringify(require('./src/config/swagger.js'),null,2))"
+> ```
+
 ---
 
 ## Integração Externa
